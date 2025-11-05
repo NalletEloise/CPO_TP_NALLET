@@ -25,7 +25,9 @@ public class TP2_Bieres_NALLET {
         BouteilleBiere saBiere = new BouteilleBiere("LULU", 16.01 ,"LECHERBONNIER");
         saBiere.lireEtiquette();
         maBiere.Décapsuler();
-        saBiere.Décapsuler();
+        taBiere.Décapsuler();
         System.out.println(maBiere);
+        System.out.println(taBiere);
+        System.out.println(uneBiere);
     }
 }
