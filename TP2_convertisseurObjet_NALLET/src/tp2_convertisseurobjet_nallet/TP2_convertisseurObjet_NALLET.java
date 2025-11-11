@@ -16,46 +16,57 @@ public class TP2_convertisseurObjet_NALLET {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        float var;
-        int choix;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Saisissez la conversion que vous souhaitez effectuer :");
-        System.out.println("1: De Celsius vers Kelvin");
-        System.out.println("2: De Kelvin vers Celsius");
-        System.out.println("3: De Fahrenheit vers Celsius");
-        System.out.println("4: De Celsius vers Fahrenheit");
-        System.out.println("5: De Kelvin vers Fahrenheit");
-        System.out.println("6: De Fahrenheit vers Kelvin");
-        Convertisseur conv = new Convertisseur();
-        choix=sc.nextInt();
-        System.out.println("Entrez un nombre :");
-        var=sc.nextFloat();
-        if (choix ==1){
-            System.out.println(conv.CelciusVersKelvin(var) +" K");
+        Convertisseur conv1 = new Convertisseur();
+        Convertisseur conv2 = new Convertisseur();
+
+        int choix;
+        double temp;
+        boolean continuer = true;
+
+        while (continuer) {
+            System.out.println("1: Celsius vers Kelvin");
+            System.out.println("2: Kelvin vers Celsius");
+            System.out.println("3: Fahrenheit vers Celsius");
+            System.out.println("4: Celsius vers Fahrenheit");
+            System.out.println("5: Kelvin vers Fahrenheit");
+            System.out.println("6: Fahrenheit vers Kelvin");
+            System.out.println("0: Quitter");
+            System.out.print("Choix : ");
+            choix = sc.nextInt();
+
+            if (choix == 0) {
+                continuer = false;
+            } else {
+                System.out.print("Entrez la température à convertir : ");
+                temp = sc.nextDouble();
+
+                double resultat = 0;
+                if (choix == 1) {
+                    resultat = conv1.CelciusVersKelvin(temp);
+                    System.out.println(temp + "°C = " + resultat + " K");
+                } else if (choix == 2) {
+                    resultat = conv1.KelvinVersCelcius(temp);
+                    System.out.println(temp + " K = " + resultat + "°C");
+                } else if (choix == 3) {
+                    resultat = conv1.FahrenheitVersCelcius(temp);
+                    System.out.println(temp + "°F = " + resultat + "°C");
+                } else if (choix == 4) {
+                    resultat = conv2.CelciusVersFahrenheit(temp);
+                    System.out.println(temp + "°C = " + resultat + "°F");
+                } else if (choix == 5) {
+                    resultat = conv2.KelvinVersFahrenheit(temp);
+                    System.out.println(temp + " K = " + resultat + "°F");
+                } else if (choix == 6) {
+                    resultat = conv2.FahrenheitVersKelvin(temp);
+                    System.out.println(temp + "°F = " + resultat + " K");
+                } else {
+                    System.out.println("Choix invalide, réessayez.");
+                }
+            }
         }
-        
-        else if (choix ==2){
-            System.out.println(conv.KelvinVersCelcius(var)+" C");
-        }
-        
-        else if (choix ==3){
-            System.out.println(conv.FarenheitVersCelcius(var)+" C");
-        }
-        
-        else if (choix ==4){
-            System.out.println(conv.CelciusVersFarenheit(var)+" F");
-        }
-        
-        else if (choix ==5){
-            System.out.println(conv.KelvinVersFarenheit(var)+" F");
-        }
-        
-        else if (choix ==6){
-            System.out.println(conv.FarenheitVersKelvein(var)+" K");
-        }
-        else{
-            System.out.println("C'est pas le bon nombre");
-        }
+        System.out.println("Conversions réalisées par conv1 : " + conv1);
+        System.out.println("Conversions réalisées par conv2 : " + conv2);
+        sc.close();
     }
-    
 }

@@ -9,48 +9,44 @@ package tp2_convertisseurobjet_nallet;
  * @author Elna
  */
 public class Convertisseur {
-    int nbConversions;
-    
-    public Convertisseur(){
-        nbConversion =0;
+    private int nbConversions;
+
+    public Convertisseur() {
+        nbConversions = 0;
     }
-    public float CelciusVersKelvin (float tCelcius){
-        float tKelvin;
+
+    public double CelciusVersKelvin(double tCelcius) {
         nbConversions++;
-        tKelvin = tCelcius+273;
-        return tKelvin;
+        return tCelcius + 273.15;
     }
-    public float KelvinVersCelcius (float tKelvin){
-        float tCelcius;
+
+    public double KelvinVersCelcius(double tKelvin) {
         nbConversions++;
-        tKelvin = tKelvin-273;
-        return tCelcius;
+        return tKelvin - 273.15;
     }
-    public float FarenheitVersCelcius (float tFarenheit){
-        float tCelcius;
+
+    public double FahrenheitVersCelcius(double tFahrenheit) {
         nbConversions++;
-        tCelcius = tFarenheit+17;
-        return tCelcius;
+        return (tFahrenheit - 32) * 5.0 / 9.0;
     }
-    public float CelciusVersFarenheit (float tCelcius){
-        float tFarenheit;
+
+    public double CelciusVersFahrenheit(double tCelcius) {
         nbConversions++;
-        tCelcius = tCelcius-17;
-        return tFarenheit;
+        return tCelcius * 9.0 / 5.0 + 32;
     }
-    public float KelvinVersFarenheit (float tCelcius){
-        float tFarenheit;
+
+    public double KelvinVersFahrenheit(double tKelvin) {
         nbConversions++;
-        tCelcius = tKelvin-255;
-        return tFarenheit;
+        return CelciusVersFahrenheit(KelvinVersCelcius(tKelvin));
     }
-    public float FarenheitVersKelvin (float tFarenheit){
-        float tKelvin;
+
+    public double FahrenheitVersKelvin(double tFahrenheit) {
         nbConversions++;
-        tKelvin = tFarenhiet-255;
-        return tKelvin;
+        return CelciusVersKelvin(FahrenheitVersCelcius(tFahrenheit));
     }
-    @Override public String toString () { 
-        return "nb de conversions"+ nbConversions; 
+
+    @Override
+    public String toString() {
+        return "nb de conversions : " + nbConversions;
     }
-    }
+}
