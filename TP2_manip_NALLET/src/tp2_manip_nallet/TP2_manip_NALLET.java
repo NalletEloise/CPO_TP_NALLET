@@ -48,6 +48,3 @@ public class TP2_manip_NALLET {
         }
     }
 }
-
-    
-}
