@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,35 +13,44 @@
 public class Fenetre_Quiz extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Fenetre_Quiz.class.getName());
-
+    ArrayList<Question> questions = new ArrayList<>();
+    private int indQC = 0;
+    private void afficherQuestionCourante(){
+        Question q = questions.get(indQC);
+        label_Question.setText(q.getinti());
+        
+        Btn_Rep1.setText(q.getp1());
+        Btn_Rep1.setText(q.getp2());
+        Btn_Rep1.setText(q.getp3());
+        Btn_Rep1.setText(q.getp4());
+    }
+    }
     /**
      * Creates new form Fenetre_Quiz
      */
     public Fenetre_Quiz() {
         initComponents();
-        
-    Question q1 = new Question(
-        "Quel pays est le seul à partager une frontière terrestre avec le Danemark ?",
-        "Pays-Bas", "Allemagne", "Suède", "Pologne",2);
 
-    Question q2 = new Question(
-        "Quel pays partage des frontières avec la Chine, la Russie et l’Inde ?",
-        "Mongolie", "Pakistan", "Kazakhstan", "Bhoutan",3);
+    questions.add(new Question(
+    "Quelle est la capitale de l’Italie ?",
+    "Rome", "Milan", "Venise", "Florence", 1));
 
-    Question q3 = new Question(
-        "Quel pays possède le plus grand nombre de voisins en Afrique ?",
-        "Soudan", "République démocratique du Congo", "Tchad", "Éthiopie",2);
+    questions.add(new Question(
+    "Quelle est la capitale du Canada ?",
+    "Toronto", "Ottawa", "Montréal", "Vancouver", 2));
 
-    Question q4 = new Question(
-        "Lequel de ces pays partage une frontière avec l’Arménie ?",
-        "Azerbaïdjan", "Turkménistan", "Serbie", "Bulgarie",1);
+    questions.add(new Question(
+    "Quelle est la capitale du Japon ?",
+    "Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
 
-    Question q5 = new Question(
-        "Quel pays d’Asie centrale n’a aucune frontière avec la Chine ?",
-        "Kirghizistan", "Kazakhstan", "Turkménistan", "Tadjikistan",3);
+    questions.add(new Question(
+    "Quelle est la capitale de l’Australie ?",
+    "Sydney", "Melbourne", "Canberra", "Brisbane", 3));
 
+    questions.add(new Question(
+    "Quelle est la capitale du Brésil ?",
+    "Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,10 +75,25 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         label_Question.setText("Question");
 
         Btn_Rep1.setText("Bouton1");
+        Btn_Rep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Rep1ActionPerformed(evt);
+            }
+        });
 
         Btn_Rep2.setText("Bonton2");
+        Btn_Rep2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Rep2ActionPerformed(evt);
+            }
+        });
 
         Btm_Rep3.setText("Bouton3");
+        Btm_Rep3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btm_Rep3ActionPerformed(evt);
+            }
+        });
 
         Btm_Rep4.setText("Bouton4");
         Btm_Rep4.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +113,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
 
         label_NUL.setText("Pas bien joué !");
 
+        label_SCORE.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         label_SCORE.setText("SCORE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,7 +175,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                         .addComponent(label_NUL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label_COOL)
-                        .addGap(0, 29, Short.MAX_VALUE)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -161,6 +189,18 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     private void Btn_QuestionSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_QuestionSuivanteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_QuestionSuivanteActionPerformed
+
+    private void Btn_Rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Rep2ActionPerformed
+
+    private void Btn_Rep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Rep1ActionPerformed
+
+    private void Btm_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btm_Rep3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btm_Rep3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -94,7 +94,7 @@
                       <Component id="label_NUL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="label_COOL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -112,16 +112,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Bouton1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Rep1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Btn_Rep2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bonton2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Rep2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Btm_Rep3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bouton3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btm_Rep3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Btm_Rep4">
       <Properties>
@@ -151,6 +160,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_SCORE">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Impact" size="18" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="SCORE"/>
       </Properties>
     </Component>
