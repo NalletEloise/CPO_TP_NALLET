@@ -5,91 +5,92 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Elna
  */
 public class Fenetre_Quiz extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Fenetre_Quiz.class.getName());
     ArrayList<Question> questions = new ArrayList<>();
     private int indQC = 0;
     private int SCORE = 0;
-    private void afficherQuestionCourante(){
+
+    private void afficherQuestionCourante() {
         Question q = questions.get(indQC);
         label_Question.setText(q.getinti());
-        
+
         Btn_Rep1.setText(q.getp1());
         Btn_Rep2.setText(q.getp2());
         Btn_Rep3.setText(q.getp3());
         Btn_Rep4.setText(q.getp4());
-        
+
         Btn_Rep1.setEnabled(true);
         Btn_Rep2.setEnabled(true);
         Btn_Rep3.setEnabled(true);
         Btn_Rep4.setEnabled(true);
-        
+
         label_COOL.setVisible(false);
         label_NUL.setVisible(false);
         Btn_QuestionSuivante.setVisible(false);
     }
-  
+
     /**
      * Creates new form Fenetre_Quiz
      */
     public Fenetre_Quiz() {
         initComponents();
 
-    questions.add(new Question(
-    "Quelle est la capitale de l’Italie ?",
-    "Rome", "Milan", "Venise", "Florence", 1));
+        questions.add(new Question(
+                "Quelle est la capitale de l’Italie ?",
+                "Rome", "Milan", "Venise", "Florence", 1));
 
-    questions.add(new Question(
-    "Quelle est la capitale du Canada ?",
-    "Toronto", "Ottawa", "Montréal", "Vancouver", 2));
+        questions.add(new Question(
+                "Quelle est la capitale du Canada ?",
+                "Toronto", "Ottawa", "Montréal", "Vancouver", 2));
 
-    questions.add(new Question(
-    "Quelle est la capitale du Japon ?",
-    "Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
+        questions.add(new Question(
+                "Quelle est la capitale du Japon ?",
+                "Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
 
-    questions.add(new Question(
-    "Quelle est la capitale de l’Australie ?",
-    "Sydney", "Melbourne", "Canberra", "Brisbane", 3));
+        questions.add(new Question(
+                "Quelle est la capitale de l’Australie ?",
+                "Sydney", "Melbourne", "Canberra", "Brisbane", 3));
 
-    questions.add(new Question(
-    "Quelle est la capitale du Brésil ?",
-    "Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
-    
-    afficherQuestionCourante();
-    
+        questions.add(new Question(
+                "Quelle est la capitale du Brésil ?",
+                "Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
+
+        afficherQuestionCourante();
+
     }
-    
+
     private void verifRep(int numChoisi) {
-    // Récupérer la question courante
-    Question q = questions.get(indQC);
+        // Récupérer la question courante
+        Question q = questions.get(indQC);
 
-    // Comparer avec la bonne réponse
-    if (numChoisi == q.getindBR()) {
-        label_COOL.setVisible(true);
-        label_NUL.setVisible(false);
-        
-        SCORE++;
-        label_SCORE.setText("SCORE : "+SCORE+"/5");
-    } else {
-        label_COOL.setVisible(false);
-        label_NUL.setVisible(true);
+        // Comparer avec la bonne réponse
+        if (numChoisi == q.getindBR()) {
+            label_COOL.setVisible(true);
+            label_NUL.setVisible(false);
+
+            SCORE++;
+            label_SCORE.setText("SCORE : " + SCORE + "/5");
+        } else {
+            label_COOL.setVisible(false);
+            label_NUL.setVisible(true);
+        }
+
+        // Désactiver les boutons après réponse
+        Btn_Rep1.setEnabled(false);
+        Btn_Rep2.setEnabled(false);
+        Btn_Rep3.setEnabled(false);
+        Btn_Rep4.setEnabled(false);
+
+        // Afficher bouton "suivant"
+        Btn_QuestionSuivante.setVisible(true);
     }
 
-    // Désactiver les boutons après réponse
-    Btn_Rep1.setEnabled(false);
-    Btn_Rep2.setEnabled(false);
-    Btn_Rep3.setEnabled(false);
-    Btn_Rep4.setEnabled(false);
-
-    // Afficher bouton "suivant"
-    Btn_QuestionSuivante.setVisible(true);
-}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,8 +230,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         indQC++;
         if (indQC < 5) {
             afficherQuestionCourante();
-        } 
-        else {
+        } else {
             label_SCORE.setText("Quiz terminé. SCORE : " + SCORE + " / " + 5);
 
             Btn_QuestionSuivante.setEnabled(false);
