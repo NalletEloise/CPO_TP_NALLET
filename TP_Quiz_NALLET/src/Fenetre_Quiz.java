@@ -63,6 +63,29 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     afficherQuestionCourante();
     
     }
+    
+    private void verifRep(int numChoisi) {
+    // Récupérer la question courante
+    Question q = questions.get(indQC);
+
+    // Comparer avec la bonne réponse
+    if (numChoisi == q.getindBR()) {
+        label_COOL.setVisible(true);
+        label_NUL.setVisible(false);
+    } else {
+        label_COOL.setVisible(false);
+        label_NUL.setVisible(true);
+    }
+
+    // Désactiver les boutons après réponse
+    Btn_Rep1.setEnabled(false);
+    Btn_Rep2.setEnabled(false);
+    Btn_Rep3.setEnabled(false);
+    Btn_Rep4.setEnabled(false);
+
+    // Afficher bouton "suivant"
+    Btn_QuestionSuivante.setVisible(true);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,16 +155,6 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn_Rep1)
-                    .addComponent(Btn_Rep3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn_Rep2)
-                    .addComponent(Btn_Rep4))
-                .addGap(71, 71, 71))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,9 +164,6 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                             .addComponent(label_COOL))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(label_Question)
-                                .addGap(207, 207, 207))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(Btn_QuestionSuivante)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -162,6 +172,19 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(label_SCORE)
                         .addGap(18, 18, 18))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label_Question, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Btn_Rep1)
+                            .addComponent(Btn_Rep3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Btn_Rep2)
+                            .addComponent(Btn_Rep4))))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +218,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep4ActionPerformed
-        // TODO add your handling code here:
+        verifRep(4);
     }//GEN-LAST:event_Btn_Rep4ActionPerformed
 
     private void Btn_QuestionSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_QuestionSuivanteActionPerformed
@@ -203,15 +226,15 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_QuestionSuivanteActionPerformed
 
     private void Btn_Rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep2ActionPerformed
-        // TODO add your handling code here:
+        verifRep(2);
     }//GEN-LAST:event_Btn_Rep2ActionPerformed
 
     private void Btn_Rep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep1ActionPerformed
-        // TODO add your handling code here:
+        verifRep(1);
     }//GEN-LAST:event_Btn_Rep1ActionPerformed
 
     private void Btn_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep3ActionPerformed
-        // TODO add your handling code here:
+        verifRep(3);
     }//GEN-LAST:event_Btn_Rep3ActionPerformed
 
     /**
