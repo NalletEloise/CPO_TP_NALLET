@@ -15,6 +15,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Fenetre_Quiz.class.getName());
     ArrayList<Question> questions = new ArrayList<>();
     private int indQC = 0;
+    private int SCORE = 0;
     private void afficherQuestionCourante(){
         Question q = questions.get(indQC);
         label_Question.setText(q.getinti());
@@ -72,6 +73,9 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     if (numChoisi == q.getindBR()) {
         label_COOL.setVisible(true);
         label_NUL.setVisible(false);
+        
+        SCORE++;
+        label_SCORE.setText("SCORE : "+SCORE+"/5");
     } else {
         label_COOL.setVisible(false);
         label_NUL.setVisible(true);
@@ -222,7 +226,15 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Rep4ActionPerformed
 
     private void Btn_QuestionSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_QuestionSuivanteActionPerformed
-        // TODO add your handling code here:
+        indQC++;
+        if (indQC < 5) {
+            afficherQuestionCourante();
+        } 
+        else {
+            label_SCORE.setText("Quiz terminé. SCORE : " + SCORE + " / " + 5);
+
+            Btn_QuestionSuivante.setEnabled(false);
+        }
     }//GEN-LAST:event_Btn_QuestionSuivanteActionPerformed
 
     private void Btn_Rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep2ActionPerformed
