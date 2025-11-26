@@ -16,6 +16,27 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
      */
     public Fenetre_Quiz() {
         initComponents();
+        
+    Question q1 = new Question(
+        "Quel pays est le seul à partager une frontière terrestre avec le Danemark ?",
+        "Pays-Bas", "Allemagne", "Suède", "Pologne",2);
+
+    Question q2 = new Question(
+        "Quel pays partage des frontières avec la Chine, la Russie et l’Inde ?",
+        "Mongolie", "Pakistan", "Kazakhstan", "Bhoutan",3);
+
+    Question q3 = new Question(
+        "Quel pays possède le plus grand nombre de voisins en Afrique ?",
+        "Soudan", "République démocratique du Congo", "Tchad", "Éthiopie",2);
+
+    Question q4 = new Question(
+        "Lequel de ces pays partage une frontière avec l’Arménie ?",
+        "Azerbaïdjan", "Turkménistan", "Serbie", "Bulgarie",1);
+
+    Question q5 = new Question(
+        "Quel pays d’Asie centrale n’a aucune frontière avec la Chine ?",
+        "Kirghizistan", "Kazakhstan", "Turkménistan", "Tadjikistan",3);
+
     }
 
     /**
@@ -27,21 +48,119 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_Question = new javax.swing.JLabel();
+        Btn_Rep1 = new javax.swing.JButton();
+        Btn_Rep2 = new javax.swing.JButton();
+        Btm_Rep3 = new javax.swing.JButton();
+        Btm_Rep4 = new javax.swing.JButton();
+        label_COOL = new javax.swing.JLabel();
+        Btn_QuestionSuivante = new javax.swing.JButton();
+        label_NUL = new javax.swing.JLabel();
+        label_SCORE = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        label_Question.setText("Question");
+
+        Btn_Rep1.setText("Bouton1");
+
+        Btn_Rep2.setText("Bonton2");
+
+        Btm_Rep3.setText("Bouton3");
+
+        Btm_Rep4.setText("Bouton4");
+        Btm_Rep4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btm_Rep4ActionPerformed(evt);
+            }
+        });
+
+        label_COOL.setText("Bien joué !");
+
+        Btn_QuestionSuivante.setText("Question suivante");
+        Btn_QuestionSuivante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_QuestionSuivanteActionPerformed(evt);
+            }
+        });
+
+        label_NUL.setText("Pas bien joué !");
+
+        label_SCORE.setText("SCORE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btn_Rep1)
+                    .addComponent(Btm_Rep3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btn_Rep2)
+                    .addComponent(Btm_Rep4))
+                .addGap(71, 71, 71))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(label_COOL))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(label_Question)
+                                .addGap(207, 207, 207))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(Btn_QuestionSuivante)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(label_NUL)
+                                .addGap(188, 188, 188))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(label_SCORE)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(label_SCORE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_Question)
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Rep1)
+                    .addComponent(Btn_Rep2))
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btm_Rep3)
+                    .addComponent(Btm_Rep4))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Btn_QuestionSuivante))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_NUL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_COOL)
+                        .addGap(0, 29, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btm_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btm_Rep4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btm_Rep4ActionPerformed
+
+    private void Btn_QuestionSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_QuestionSuivanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_QuestionSuivanteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +188,14 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btm_Rep3;
+    private javax.swing.JButton Btm_Rep4;
+    private javax.swing.JButton Btn_QuestionSuivante;
+    private javax.swing.JButton Btn_Rep1;
+    private javax.swing.JButton Btn_Rep2;
+    private javax.swing.JLabel label_COOL;
+    private javax.swing.JLabel label_NUL;
+    private javax.swing.JLabel label_Question;
+    private javax.swing.JLabel label_SCORE;
     // End of variables declaration//GEN-END:variables
 }
