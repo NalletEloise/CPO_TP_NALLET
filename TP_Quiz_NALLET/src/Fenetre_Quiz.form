@@ -27,12 +27,12 @@
               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Btn_Rep1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="Btm_Rep3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Btn_Rep3" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="160" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Btn_Rep2" min="-2" max="-2" attributes="0"/>
-                  <Component id="Btm_Rep4" min="-2" max="-2" attributes="0"/>
+                  <Component id="Btn_Rep4" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
@@ -81,8 +81,8 @@
               </Group>
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Btm_Rep3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Btm_Rep4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Btn_Rep3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Btn_Rep4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -124,20 +124,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Rep2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Btm_Rep3">
+    <Component class="javax.swing.JButton" name="Btn_Rep3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bouton3"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btm_Rep3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Rep3ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Btm_Rep4">
+    <Component class="javax.swing.JButton" name="Btn_Rep4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bouton4"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btm_Rep4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Rep4ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="label_COOL">

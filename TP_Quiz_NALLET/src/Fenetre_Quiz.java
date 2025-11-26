@@ -20,9 +20,18 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         label_Question.setText(q.getinti());
         
         Btn_Rep1.setText(q.getp1());
-        Btn_Rep1.setText(q.getp2());
-        Btn_Rep1.setText(q.getp3());
-        Btn_Rep1.setText(q.getp4());
+        Btn_Rep2.setText(q.getp2());
+        Btn_Rep3.setText(q.getp3());
+        Btn_Rep4.setText(q.getp4());
+        
+        Btn_Rep1.setEnabled(true);
+        Btn_Rep2.setEnabled(true);
+        Btn_Rep3.setEnabled(true);
+        Btn_Rep4.setEnabled(true);
+        
+        label_COOL.setVisible(false);
+        label_NUL.setVisible(false);
+        Btn_QuestionSuivante.setVisible(false);
     }
   
     /**
@@ -50,6 +59,9 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     questions.add(new Question(
     "Quelle est la capitale du Brésil ?",
     "Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
+    
+    afficherQuestionCourante();
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,8 +75,8 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         label_Question = new javax.swing.JLabel();
         Btn_Rep1 = new javax.swing.JButton();
         Btn_Rep2 = new javax.swing.JButton();
-        Btm_Rep3 = new javax.swing.JButton();
-        Btm_Rep4 = new javax.swing.JButton();
+        Btn_Rep3 = new javax.swing.JButton();
+        Btn_Rep4 = new javax.swing.JButton();
         label_COOL = new javax.swing.JLabel();
         Btn_QuestionSuivante = new javax.swing.JButton();
         label_NUL = new javax.swing.JLabel();
@@ -88,17 +100,17 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
             }
         });
 
-        Btm_Rep3.setText("Bouton3");
-        Btm_Rep3.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Rep3.setText("Bouton3");
+        Btn_Rep3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btm_Rep3ActionPerformed(evt);
+                Btn_Rep3ActionPerformed(evt);
             }
         });
 
-        Btm_Rep4.setText("Bouton4");
-        Btm_Rep4.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Rep4.setText("Bouton4");
+        Btn_Rep4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btm_Rep4ActionPerformed(evt);
+                Btn_Rep4ActionPerformed(evt);
             }
         });
 
@@ -124,11 +136,11 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn_Rep1)
-                    .addComponent(Btm_Rep3))
+                    .addComponent(Btn_Rep3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn_Rep2)
-                    .addComponent(Btm_Rep4))
+                    .addComponent(Btn_Rep4))
                 .addGap(71, 71, 71))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,8 +176,8 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                     .addComponent(Btn_Rep2))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Btm_Rep3)
-                    .addComponent(Btm_Rep4))
+                    .addComponent(Btn_Rep3)
+                    .addComponent(Btn_Rep4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -182,9 +194,9 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Btm_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btm_Rep4ActionPerformed
+    private void Btn_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Btm_Rep4ActionPerformed
+    }//GEN-LAST:event_Btn_Rep4ActionPerformed
 
     private void Btn_QuestionSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_QuestionSuivanteActionPerformed
         // TODO add your handling code here:
@@ -198,9 +210,9 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Rep1ActionPerformed
 
-    private void Btm_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btm_Rep3ActionPerformed
+    private void Btn_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Rep3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Btm_Rep3ActionPerformed
+    }//GEN-LAST:event_Btn_Rep3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,11 +240,11 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btm_Rep3;
-    private javax.swing.JButton Btm_Rep4;
     private javax.swing.JButton Btn_QuestionSuivante;
     private javax.swing.JButton Btn_Rep1;
     private javax.swing.JButton Btn_Rep2;
+    private javax.swing.JButton Btn_Rep3;
+    private javax.swing.JButton Btn_Rep4;
     private javax.swing.JLabel label_COOL;
     private javax.swing.JLabel label_NUL;
     private javax.swing.JLabel label_Question;
