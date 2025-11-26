@@ -24,7 +24,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         Btn_Rep1.setText(q.getp3());
         Btn_Rep1.setText(q.getp4());
     }
-    }
+  
     /**
      * Creates new form Fenetre_Quiz
      */
