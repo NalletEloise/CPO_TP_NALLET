@@ -88,10 +88,10 @@ public class Interface extends javax.swing.JFrame {
         bouton_recommencer.setText("recommencer");
         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
 
-        jPanel1.setLayout(new java.awt.GridLayout(3, 4, 10, 5));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 4, 20, 7));
 
-        up_chiffre_1.setBackground(new java.awt.Color(153, 0, 51));
-        up_chiffre_1.setForeground(new java.awt.Color(255, 255, 255));
+        up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        up_chiffre_1.setForeground(new java.awt.Color(102, 0, 0));
         up_chiffre_1.setText("/\\");
             up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +100,8 @@ public class Interface extends javax.swing.JFrame {
             });
             jPanel1.add(up_chiffre_1);
 
-            up_chiffre_2.setBackground(new java.awt.Color(153, 0, 51));
-            up_chiffre_2.setForeground(new java.awt.Color(255, 255, 255));
+            up_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+            up_chiffre_2.setForeground(new java.awt.Color(102, 0, 0));
             up_chiffre_2.setText("/\\");
                 up_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,53 +110,61 @@ public class Interface extends javax.swing.JFrame {
                 });
                 jPanel1.add(up_chiffre_2);
 
-                up_chiffre_3.setBackground(new java.awt.Color(153, 0, 51));
-                up_chiffre_3.setForeground(new java.awt.Color(255, 255, 255));
+                up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                up_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
                 up_chiffre_3.setText("/\\");
                     jPanel1.add(up_chiffre_3);
 
-                    up_chiffre_4.setBackground(new java.awt.Color(153, 0, 51));
-                    up_chiffre_4.setForeground(new java.awt.Color(255, 255, 255));
+                    up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    up_chiffre_4.setForeground(new java.awt.Color(102, 0, 0));
                     up_chiffre_4.setText("/\\");
                         jPanel1.add(up_chiffre_4);
 
+                        texte_chiffre_3.setFont(new java.awt.Font("Serif", 1, 27)); // NOI18N
                         texte_chiffre_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_3.setText("0");
+                        texte_chiffre_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0)));
                         jPanel1.add(texte_chiffre_3);
 
+                        texte_chiffre_2.setFont(new java.awt.Font("Serif", 1, 27)); // NOI18N
                         texte_chiffre_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_2.setText("0");
+                        texte_chiffre_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0)));
                         jPanel1.add(texte_chiffre_2);
 
+                        texte_chiffre_1.setFont(new java.awt.Font("Serif", 1, 27)); // NOI18N
                         texte_chiffre_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_1.setText("0");
+                        texte_chiffre_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0)));
                         jPanel1.add(texte_chiffre_1);
 
+                        texte_chiffre_4.setFont(new java.awt.Font("Serif", 1, 27)); // NOI18N
                         texte_chiffre_4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_4.setText("0");
+                        texte_chiffre_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0)));
                         jPanel1.add(texte_chiffre_4);
 
-                        down_chiffre_2.setBackground(new java.awt.Color(153, 0, 51));
-                        down_chiffre_2.setForeground(new java.awt.Color(255, 255, 255));
+                        down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                        down_chiffre_2.setForeground(new java.awt.Color(102, 0, 0));
                         down_chiffre_2.setText("\\/");
                         jPanel1.add(down_chiffre_2);
 
-                        down_chiffre_3.setBackground(new java.awt.Color(153, 0, 51));
-                        down_chiffre_3.setForeground(new java.awt.Color(255, 255, 255));
+                        down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                        down_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
                         down_chiffre_3.setText("\\/");
                         jPanel1.add(down_chiffre_3);
 
-                        down_chiffre_4.setBackground(new java.awt.Color(153, 0, 51));
-                        down_chiffre_4.setForeground(new java.awt.Color(255, 255, 255));
+                        down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                        down_chiffre_4.setForeground(new java.awt.Color(102, 0, 0));
                         down_chiffre_4.setText("\\/");
                         jPanel1.add(down_chiffre_4);
 
-                        down_chiffre_1.setBackground(new java.awt.Color(153, 0, 51));
-                        down_chiffre_1.setForeground(new java.awt.Color(255, 255, 255));
+                        down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                        down_chiffre_1.setForeground(new java.awt.Color(102, 0, 0));
                         down_chiffre_1.setText("\\/");
                         jPanel1.add(down_chiffre_1);
 
-                        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 290, 120));
+                        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 250, 130));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
