@@ -61,9 +61,19 @@ public class JeuCadenas {
         }
     }
     
+     public String getSolution() {
+        // Transforme le tableau d'entiers (ex: [1, 2, 3, 4]) en texte (ex: "1234")
+        String solution = "";
+        for (int i = 0; i < 4; i++) {
+            solution += combinaisonSecrete[i];
+        }
+        return solution;
+    }
+    
     public int getExacts() { return exacts; }
     public int getTropHauts() { return tropHauts; }
     public int getTropBas() { return tropBas; }
     public int getNbTentativesRestantes() { return nbTentativesRestantes; }
     public boolean estGagne() { return partieGagnee; }
+    
 }
