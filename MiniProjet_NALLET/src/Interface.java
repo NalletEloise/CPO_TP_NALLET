@@ -11,11 +11,14 @@ public class Interface extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Interface.class.getName());
 
+    private JeuCadenas jeu;
+    
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
+        initLogique();
     }
 
     /**
@@ -33,18 +36,18 @@ public class Interface extends javax.swing.JFrame {
         texte_tentatives = new javax.swing.JLabel();
         bouton_recommencer = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        down_chiffre_2 = new javax.swing.JButton();
-        down_chiffre_4 = new javax.swing.JButton();
-        down_chiffre_1 = new javax.swing.JButton();
         down_chiffre_3 = new javax.swing.JButton();
+        down_chiffre_1 = new javax.swing.JButton();
+        down_chiffre_4 = new javax.swing.JButton();
+        down_chiffre_2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         texte_chiffre_3 = new javax.swing.JLabel();
         texte_chiffre_1 = new javax.swing.JLabel();
         texte_chiffre_4 = new javax.swing.JLabel();
         texte_chiffre_2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        up_chiffre_1 = new javax.swing.JButton();
         up_chiffre_3 = new javax.swing.JButton();
+        up_chiffre_1 = new javax.swing.JButton();
         up_chiffre_4 = new javax.swing.JButton();
         up_chiffre_2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -77,25 +80,25 @@ public class Interface extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 4, 10, 0));
 
-        down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        down_chiffre_2.setForeground(new java.awt.Color(102, 0, 0));
-        down_chiffre_2.setText("\\/");
-        jPanel1.add(down_chiffre_2);
-
-        down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        down_chiffre_4.setForeground(new java.awt.Color(102, 0, 0));
-        down_chiffre_4.setText("\\/");
-        jPanel1.add(down_chiffre_4);
+        down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        down_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
+        down_chiffre_3.setText("\\/");
+        jPanel1.add(down_chiffre_3);
 
         down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         down_chiffre_1.setForeground(new java.awt.Color(102, 0, 0));
         down_chiffre_1.setText("\\/");
         jPanel1.add(down_chiffre_1);
 
-        down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        down_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
-        down_chiffre_3.setText("\\/");
-        jPanel1.add(down_chiffre_3);
+        down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        down_chiffre_4.setForeground(new java.awt.Color(102, 0, 0));
+        down_chiffre_4.setText("\\/");
+        jPanel1.add(down_chiffre_4);
+
+        down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        down_chiffre_2.setForeground(new java.awt.Color(102, 0, 0));
+        down_chiffre_2.setText("\\/");
+        jPanel1.add(down_chiffre_2);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 270, 30));
 
@@ -129,20 +132,20 @@ public class Interface extends javax.swing.JFrame {
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 4, 10, 0));
 
-        up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        up_chiffre_1.setForeground(new java.awt.Color(102, 0, 0));
-        up_chiffre_1.setText("/\\");
-            up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    up_chiffre_1ActionPerformed(evt);
-                }
-            });
-            jPanel4.add(up_chiffre_1);
+        up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        up_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
+        up_chiffre_3.setText("/\\");
+            jPanel4.add(up_chiffre_3);
 
-            up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-            up_chiffre_3.setForeground(new java.awt.Color(102, 0, 0));
-            up_chiffre_3.setText("/\\");
-                jPanel4.add(up_chiffre_3);
+            up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+            up_chiffre_1.setForeground(new java.awt.Color(102, 0, 0));
+            up_chiffre_1.setText("/\\");
+                up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        up_chiffre_1ActionPerformed(evt);
+                    }
+                });
+                jPanel4.add(up_chiffre_1);
 
                 up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 up_chiffre_4.setForeground(new java.awt.Color(102, 0, 0));
@@ -248,4 +251,67 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton up_chiffre_3;
     private javax.swing.JButton up_chiffre_4;
     // End of variables declaration//GEN-END:variables
+
+    private void initLogique() {
+
+        this.jeu = new JeuCadenas();
+        
+        bouton_tester.addActionListener(e -> {
+            int[] prop = new int[4];
+            prop[0] = Integer.parseInt(texte_chiffre_1.getText());
+            prop[1] = Integer.parseInt(texte_chiffre_2.getText());
+            prop[2] = Integer.parseInt(texte_chiffre_3.getText());
+            prop[3] = Integer.parseInt(texte_chiffre_4.getText());
+            
+            jeu.testerCombinaison(prop);
+            
+            texte_nb_chiffres_exacts.setText(String.valueOf(jeu.getExacts()));
+            texte_nb_chiffres_haut.setText(String.valueOf(jeu.getTropHauts()));
+            texte_nb_chiffres_bas.setText(String.valueOf(jeu.getTropBas()));
+            texte_tentatives.setText(jeu.getNbTentativesRestantes() + " sur 10");
+            
+            if (jeu.estGagne()) {
+                javax.swing.JOptionPane.showMessageDialog(this, "BRAVO ! Vous avez trouvé !");
+                bouton_tester.setEnabled(false);
+            } else if (jeu.getNbTentativesRestantes() == 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "PERDU...");
+                bouton_tester.setEnabled(false);
+            }
+        });
+
+   
+        bouton_recommencer.addActionListener(e -> {
+            jeu.demarrerNouvellePartie();
+            texte_chiffre_1.setText("0");
+            texte_chiffre_2.setText("0");
+            texte_chiffre_3.setText("0");
+            texte_chiffre_4.setText("0");
+            texte_nb_chiffres_exacts.setText("0");
+            texte_nb_chiffres_haut.setText("0");
+            texte_nb_chiffres_bas.setText("0");
+            texte_tentatives.setText("10 sur 10");
+            bouton_tester.setEnabled(true);
+        });
+
+        ajouterAction(up_chiffre_1, texte_chiffre_1, 1);
+        ajouterAction(up_chiffre_2, texte_chiffre_2, 1);
+        ajouterAction(up_chiffre_3, texte_chiffre_3, 1);
+        ajouterAction(up_chiffre_4, texte_chiffre_4, 1);
+        
+        ajouterAction(down_chiffre_1, texte_chiffre_1, -1);
+        ajouterAction(down_chiffre_2, texte_chiffre_2, -1);
+        ajouterAction(down_chiffre_3, texte_chiffre_3, -1);
+        ajouterAction(down_chiffre_4, texte_chiffre_4, -1);
+    }
+
+    private void ajouterAction(javax.swing.JButton bouton, javax.swing.JLabel label, int direction) {
+        bouton.addActionListener(e -> {
+            int val = Integer.parseInt(label.getText());
+            val = val + direction;
+            if (val > 9) val = 0;
+            if (val < 0) val = 9;
+            label.setText(String.valueOf(val));
+        });
+    }
+
 }
