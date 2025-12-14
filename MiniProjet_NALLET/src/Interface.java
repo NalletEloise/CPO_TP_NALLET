@@ -13,6 +13,7 @@ public class Interface extends javax.swing.JFrame {
 
     private JeuCadenas jeu;
     
+    
     /**
      * Creates new form Interface
      */
@@ -70,7 +71,7 @@ public class Interface extends javax.swing.JFrame {
 
         texte_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 60, 10));
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 130, 10));
 
         bouton_recommencer.setText("recommencer");
         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
@@ -264,6 +265,7 @@ public class Interface extends javax.swing.JFrame {
     private void initLogique() {
 
         this.jeu = new JeuCadenas();
+        lancerJeuAvecChoix();
         
         bouton_tester.addActionListener(e -> {
             int[] prop = new int[4];
@@ -277,7 +279,7 @@ public class Interface extends javax.swing.JFrame {
             texte_nb_chiffres_exacts.setText(String.valueOf(jeu.getExacts()));
             texte_nb_chiffres_haut.setText(String.valueOf(jeu.getTropHauts()));
             texte_nb_chiffres_bas.setText(String.valueOf(jeu.getTropBas()));
-            texte_tentatives.setText(10-(jeu.getNbTentativesRestantes()) + " sur 10");
+            texte_tentatives.setText(jeu.getNbTentativesRestantes() + " sur " + jeu.getMaxTentatives());
             
             if (jeu.estGagne()) {
                 javax.swing.JOptionPane.showMessageDialog(this, "BRAVO ! Vous avez trouvé !");
@@ -291,7 +293,22 @@ public class Interface extends javax.swing.JFrame {
 
    
         bouton_recommencer.addActionListener(e -> {
-            jeu.demarrerNouvellePartie();
+            String[] options = {"Facile (20 essais)", "Normal (10 essais)", "Hardcore (5 essais)"};
+            int choix = javax.swing.JOptionPane.showOptionDialog(this,
+                    "Choisissez la difficulté :",
+                    "Nouvelle Partie",
+                    javax.swing.JOptionPane.DEFAULT_OPTION,
+                    javax.swing.JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+
+            int nbVies = 10;
+            if (choix == 0) nbVies = 20;
+            if (choix == 2) nbVies = 5;
+
+            jeu.demarrerNouvellePartie(nbVies);
+
             texte_chiffre_1.setText("0");
             texte_chiffre_2.setText("0");
             texte_chiffre_3.setText("0");
@@ -299,7 +316,9 @@ public class Interface extends javax.swing.JFrame {
             texte_nb_chiffres_exacts.setText("0");
             texte_nb_chiffres_haut.setText("0");
             texte_nb_chiffres_bas.setText("0");
-            texte_tentatives.setText("10 sur 10");
+            
+            texte_tentatives.setText(nbVies + " sur " + nbVies);
+            
             bouton_tester.setEnabled(true);
         });
 
@@ -323,4 +342,33 @@ public class Interface extends javax.swing.JFrame {
             label.setText(String.valueOf(val));
         });
     }
+    private void lancerJeuAvecChoix() {
+    String[] options = {"Facile (20 essais)", "Normal (10 essais)", "Hardcore (5 essais)"};
+            int choix = javax.swing.JOptionPane.showOptionDialog(this,
+                    "Choisissez la difficulté :",
+                    "Nouvelle Partie",
+                    javax.swing.JOptionPane.DEFAULT_OPTION,
+                    javax.swing.JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+
+    int nbVies = 10;
+            if (choix == 0) nbVies = 20;
+            if (choix == 2) nbVies = 5;
+
+            jeu.demarrerNouvellePartie(nbVies);
+
+            texte_chiffre_1.setText("0");
+            texte_chiffre_2.setText("0");
+            texte_chiffre_3.setText("0");
+            texte_chiffre_4.setText("0");
+            texte_nb_chiffres_exacts.setText("0");
+            texte_nb_chiffres_haut.setText("0");
+            texte_nb_chiffres_bas.setText("0");
+            
+            texte_tentatives.setText(nbVies + " sur " + nbVies);
+            
+            bouton_tester.setEnabled(true);
+}
 }
