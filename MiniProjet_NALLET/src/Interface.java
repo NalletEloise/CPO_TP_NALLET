@@ -323,5 +323,4 @@ public class Interface extends javax.swing.JFrame {
             label.setText(String.valueOf(val));
         });
     }
-
 }
